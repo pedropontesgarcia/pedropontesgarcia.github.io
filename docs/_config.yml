@@ -27,7 +27,7 @@ url: "https://pedropontesgarcia.github.io" # the base hostname & protocol for yo
 github_username:  pedropontesgarcia
 
 # Build settings
-theme: minima
+remote_theme: CloudCannon/vonge-jekyll-bookshop-template
 plugins:
   - jekyll-feed
 
