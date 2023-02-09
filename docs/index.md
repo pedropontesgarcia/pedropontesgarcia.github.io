@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Pedro Pontes García
-description: Hello!
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
