@@ -2,6 +2,7 @@
 layout: default
 title: Pedro Pontes García
 ---
+Hello! My name is Pedro Pontes García, and I am a Computer Science and Mathematics student at Cornell University. I graduated from UWC Red Cross Nordic in Norway in 2022, and I'm currently based in Ithaca, NY.
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
