@@ -1,5 +1,7 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
+title: Pedro Pontes García
+description: >-
+    My name is Pedro Pontes García, and I am a Computer Science and Mathematics student at Cornell University. I graduated from UWC Red Cross Nordic in Norway in 2022, and I'm currently based in Ithaca, NY.
 show_downloads: true
+github_url: "https://github.com/pedropontesgarcia"
 google_analytics:
 theme: jekyll-theme-cayman
