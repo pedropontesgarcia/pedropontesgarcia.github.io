@@ -27,7 +27,7 @@ url: "https://pedropontesgarcia.github.io" # the base hostname & protocol for yo
 github_username:  pedropontesgarcia
 
 # Build settings
-remote_theme:  samarsault/texture
+theme: jekyll-theme-cayman
 #remote_theme: pages-themes/cayman@v0.2.0
 #theme: minima
 plugins:
