@@ -62,7 +62,8 @@ body::after {
 	
 	.left-pane {
 		width: 100vw !important;
-		height: 100vh !important;
+		height: auto !important;
+		box-shadow: none !important;
 	}
 	
 	.mouse_scroll {
@@ -71,6 +72,7 @@ body::after {
 	
 	.button {
 		font-size: 24px !important;
+		margin-bottom: 15vh !important;
 	}
 	
 	.logo {
@@ -79,6 +81,8 @@ body::after {
 	
 	.main-logo {
 		margin-top: 0;
+		width: 80vw;
+		max-width: 500px !important;
 	}
 }
 
@@ -88,6 +92,7 @@ body::after {
 	padding: 10px 20px;
 	background-color: black;
 	margin-bottom: 0;
+	font-size: 1vw;
 }
 
 .logo {
@@ -157,6 +162,7 @@ footer {
 
 /* Mouse stuff */
 .mouse_scroll {
+	cursor: pointer;
 	display: block;
 	margin: 0 auto;
 	width: 24px;
