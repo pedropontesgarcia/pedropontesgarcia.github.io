@@ -25,13 +25,14 @@ body::after {
 .left-pane {
 	width: 30vw;
 	height: 100vh;
-	box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
     clip-path: inset(0px -500px 0px 0px);
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-flow: column wrap;
+	flex-flow: column nowrap;
+	overflow: hidden;
 }
 
 .main-logo {
@@ -79,9 +80,27 @@ body::after {
 	}
 	
 	.main-logo {
-		margin-top: 0;
-		width: 80vw;
+		margin-top: 0 !important;
+		width: 80vw !important;
 		max-width: 500px !important;
+	}
+}
+
+@media screen and (max-height: 650px) {
+	.mouse_scroll {
+		display: none !important;
+	}
+	
+	.main-logo {
+		margin-top: 0 !important;
+	}
+	
+	.top {
+		height: 600px !important;
+	}
+	
+	.pane {
+		height: 600px !important;
 	}
 }
 
@@ -176,7 +195,6 @@ footer {
   width: 5px;
   height: 5px;
   transform: rotate(45deg);
-   
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   margin: 0 0 3px 4px;
