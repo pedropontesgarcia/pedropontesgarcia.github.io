@@ -1,6 +1,6 @@
 body {
     margin: 0;
-	font-family: 'JetBrains Mono', sans-serif, 'Noto Sans Symbols 2';
+	font-family: 'JetBrains Mono', 'Noto Sans Symbols 2', sans-serif;
 	position: relative;
 }
 
