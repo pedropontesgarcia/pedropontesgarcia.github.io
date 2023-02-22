@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256.0px"
+   height="256.0px"
+   viewBox="0 0 256.0 256.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview75"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="2.8649832"
+     inkscape:cx="28.621459"
+     inkscape:cy="128.62205"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid81" />
+  </sodipodi:namedview>
+  <defs
+     id="defs70">
+    <rect
+       x="310"
+       y="30"
+       width="215"
+       height="60"
+       id="rect988" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1"
+       id="rect4727"
+       width="255"
+       height="255"
+       x="0"
+       y="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:47.6121px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:1.1903"
+       x="41.631603"
+       y="85.625229"
+       id="text142"><tspan
+         sodipodi:role="line"
+         id="tspan140"
+         x="41.631603"
+         y="85.625229"
+         style="stroke-width:1.1903">Pedro<tspan
+   style="fill:#00d186;fill-opacity:1;stroke-width:1.1903"
+   id="tspan306" /></tspan><tspan
+         sodipodi:role="line"
+         x="41.631603"
+         y="145.14035"
+         id="tspan144"
+         style="stroke-width:1.1903">Pontes</tspan><tspan
+         sodipodi:role="line"
+         x="41.631603"
+         y="204.65547"
+         id="tspan146"
+         style="stroke-width:1.1903">García</tspan></text>
+  </g>
+</svg>
