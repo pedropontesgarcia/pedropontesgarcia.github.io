@@ -7,7 +7,7 @@
    viewBox="0 0 256.0 256.0"
    version="1.1"
    id="SVGRoot"
-   sodipodi:docname="small logo.svg"
+   sodipodi:docname="logo_small.svg"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,8 +25,8 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="2.8649832"
-     inkscape:cx="52.70537"
-     inkscape:cy="129.14561"
+     inkscape:cx="46.073569"
+     inkscape:cy="129.32013"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -58,18 +58,17 @@
        height="255"
        x="0"
        y="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:128.058px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:3.20145"
-       x="49.116249"
-       y="168.33827"
-       id="text142"><tspan
-         sodipodi:role="line"
-         x="49.116249"
-         y="168.33827"
-         id="tspan146"
-         style="stroke-width:3.20145">P<tspan
-   style="fill:#00d186;fill-opacity:1;stroke-width:3.20145"
-   id="tspan306">_</tspan></tspan></text>
+    <g
+       aria-label="P_"
+       id="text142"
+       style="font-size:128.058px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:3.20145">
+      <path
+         d="M 60.897585,168.33827 V 74.855933 h 30.09363 q 13.061915,0 20.745395,7.555422 7.81154,7.427364 7.81154,19.977045 0,12.54969 -7.81154,20.10511 -7.68348,7.42736 -20.745395,7.42736 h -18.56841 v 38.4174 z m 11.52522,-48.7901 h 18.56841 q 7.555422,0 12.037455,-4.61008 4.61008,-4.73815 4.61008,-12.54969 0,-7.939593 -4.61008,-12.549681 -4.482033,-4.610088 -12.037455,-4.610088 h -18.56841 z"
+         id="path170" />
+      <path
+         d="m 133.63458,181.14407 v -9.60435 h 61.46783 v 9.60435 z"
+         style="fill:#00d186"
+         id="path172" />
+    </g>
   </g>
 </svg>
