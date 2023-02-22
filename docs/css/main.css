@@ -46,7 +46,6 @@ body::after {
 .right-pane {
 	width: 70vw;
 	height: 100vh;
-	background-image: url("../images/forest.png");
 	background-color: #d5dadd;
 	background-size: cover;
 	display: flex;
