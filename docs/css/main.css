@@ -5,9 +5,18 @@ body {
 }
 
 body::after {
-  content: '';
-  display: block;
-  height: 75px;
+	content: '';
+	display: block;
+	height: 75px;
+}
+
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
+}
+
+ul {
+	list-style-type: none;
 }
 
 .top {
@@ -48,7 +57,10 @@ body::after {
 	width: 70vw;
 	height: 100vh;
 	background-color: #d5dadd;
-	background-size: cover;
+	background-size: 70vw 100vh;
+	background-attachment: fixed;
+	background-position: right;
+	background-repeat: no-repeat;
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
@@ -84,6 +96,15 @@ body::after {
 		width: 80vw !important;
 		max-width: 500px !important;
 	}
+	
+	.content-img-div {
+		display: none !important;
+	}
+	
+	.link-list {
+		font-size: 64px !important;
+		line-height: 128px !important;
+	}
 }
 
 @media screen and (max-height: 650px) {
@@ -105,7 +126,7 @@ body::after {
 }
 
 .right-pane > p {
-	font-style: italic;
+	//font-style: italic;
 	color: white;
 	padding: 10px 20px;
 	background-color: black;
@@ -145,12 +166,12 @@ body::after {
 	font-size: 1vw;
 	text-decoration: none;
 	padding: 5px 10px;
+	transition: 0.2s;
 }
 
 .button:hover {
 	background-color: black;
 	color: white;
-	transition: 0.3s;
 }
 
 footer {
@@ -167,11 +188,106 @@ footer {
 	height: 75px;
 }
 
-.middle {
+.middle-black {
 	background-color: black;
+}
+
+.middle {
 	color: white;
 	width: 100%;
-	height: 50vh;
+	height: 75vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.link-list {
+	font-size: 3vw;
+	line-height: 7vw;
+}
+
+.reveal {
+	position: relative;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: 0.5s ease;
+}
+
+.reveal.active {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.link-list a {
+	color: #899499;
+	transition: 0.2s;
+}
+
+.link-list a:hover {
+	color: white;
+}
+
+.middle-white {
+	background-color: white;
+	color: black;
+}
+
+.title-projects {
+	background-image: url("../images/pendulum.png");
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 40%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.title-projects p {
+	font-size: 9vw;
+}
+
+.content-img-div {
+	height: 60%;
+	width: 40%;
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 3%;
+}
+
+.content-img-div div {
+	display: flex;
+	justify-content: flex-end;
+	color: #adb4b8;
+}
+
+
+#typewrite {
+	display: inline;
+	text-align: right;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+#typewrite:hover {
+	color: white;
+}
+
+#typewrite:hover + #caret {
+	color: white;
+}
+
+#caret {
+	display: inline;
+	text-align: right;
+	width: 0;
+	transition: color 0.2s;
+}
+
+.content-img-div img {
+	height: 100%;
+	width: auto;
 }
 
 
