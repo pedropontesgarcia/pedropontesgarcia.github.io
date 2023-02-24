@@ -57,10 +57,11 @@ ul {
 	width: 70vw;
 	height: 100vh;
 	background-color: #d5dadd;
-	background-size: 70vw 100vh;
-	background-attachment: fixed;
-	background-position: right;
+	//background-size: 70vw auto;
+	//background-attachment: fixed;
+	background-position: center;
 	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
@@ -101,9 +102,13 @@ ul {
 		display: none !important;
 	}
 	
+	ul {
+		padding-inline-start: 0;
+	}
+	
 	.link-list {
-		font-size: 64px !important;
-		line-height: 128px !important;
+		font-size: 36px !important;
+		line-height: 96px !important;
 	}
 }
 
@@ -195,7 +200,7 @@ footer {
 .middle {
 	color: white;
 	width: 100%;
-	height: 75vh;
+	min-height: 75vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -249,8 +254,7 @@ footer {
 }
 
 .content-img-div {
-	height: 60%;
-	width: 40%;
+	width: 35%;
 	display: flex;
 	flex-flow: column nowrap;
 	row-gap: 3%;
@@ -260,6 +264,12 @@ footer {
 	display: flex;
 	justify-content: flex-end;
 	color: #adb4b8;
+}
+
+.content-img-div img {
+	height: 60%;
+	width: auto;
+	object-fit: cover;
 }
 
 

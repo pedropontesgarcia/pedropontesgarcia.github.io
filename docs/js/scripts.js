@@ -65,7 +65,6 @@ function caret() {
 }
 
 function actual_caret() {
-	console.log("here")
 	if (ctr >= 10) {
 		running = false;
 		return;
