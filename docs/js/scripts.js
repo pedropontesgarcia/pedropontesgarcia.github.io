@@ -30,30 +30,31 @@ var visible = false;
 var on = false;
 var ctr = 0;
 var running = false;
-window.addEventListener("scroll", function(){
-	if (visible) { return }
-	typewriter('Cornell University, my alma mater.', 75);})
-if (!visible) {
-	typewriter('Cornell University, my alma mater.', 75);
-}
+setInterval(function(){ typewriter('Cornell University, my alma mater.', 75); }, 500);
 
 function typewriter(txt, speed, iter = 0) {
+	if (visible) { return; }
 	var tw = document.getElementById("typewrite");
 	var windowHeight = window.innerHeight;
 	var elementTop = tw.getBoundingClientRect().top;
-	var elementVisible = 100;
+	var elementVisible = 50;
 	if (elementTop < windowHeight - elementVisible) {
-		if (iter < txt.length-1) {
-			visible = true;
-			tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter) + '█';
-			setTimeout(function(){typewriter(txt, speed, iter+1);}, speed);
-		} else if (iter == txt.length-1) {
-			tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter);
-			caret();
-			setTimeout(function(){typewriter(txt, speed, iter+1);}, speed);
-		} else {
-			tw.innerHTML = tw.innerHTML;
-		}
+		visible = true;
+		typewriter_actual(txt, speed, iter);
+	}
+}
+
+function typewriter_actual(txt, speed, iter = 0) {
+	var tw = document.getElementById("typewrite");
+	if (iter < txt.length-1) {
+		tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter) + '█';
+		setTimeout(function(){typewriter_actual(txt, speed, iter+1);}, speed);
+	} else if (iter == txt.length-1) {
+		tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter);
+		caret();
+		setTimeout(function(){typewriter_actual(txt, speed, iter+1);}, speed);
+	} else {
+		tw.innerHTML = tw.innerHTML;
 	}
 }
 
