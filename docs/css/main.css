@@ -88,7 +88,7 @@ ul {
 		color: white !important;
 		border-width: 0 !important;
 		background-attachment: fixed;
-		background-size: 800px;
+		background-size: auto 100vh;
 		transition: background 0.3s ease-in-out;
 	}
 
@@ -122,7 +122,7 @@ ul {
 	.text {
 		margin-top: 50px;
 		margin-bottom: 50px;
-		width: 70% !important;
+		width: 80% !important;
 	}
 }
 
