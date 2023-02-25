@@ -88,7 +88,7 @@ ul {
 		color: white !important;
 		border-width: 0 !important;
 		background-attachment: fixed;
-		background-size: auto 600px;
+		background-size: auto 90vh;
 		transition: background 0.3s ease-in-out;
 	}
 
@@ -253,7 +253,6 @@ footer {
 .link-list a:hover {
 	color: black;
 	background-color: #b4c3ca;
-	text-decoration: none;
 }
 
 .middle-white {
