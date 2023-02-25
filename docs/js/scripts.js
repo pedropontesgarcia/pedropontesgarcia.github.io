@@ -101,3 +101,15 @@ window.addEventListener("resize", () => {
 
 rand = randInt(1, 3);
 document.querySelector('.right-pane').style.backgroundImage = "url('images/bg/" + rand + ".png')";
+
+function splashOnMobile(x) {
+	if (x.matches) {
+		document.querySelector('.button').style.backgroundImage = "url('images/bg/" + rand + ".png')";
+	} else {
+		document.querySelector('.button').style.backgroundImage = "none";
+	}
+}
+
+var x = window.matchMedia("(max-width: 800px)");
+splashOnMobile(x);
+x.addListener(splashOnMobile);

@@ -57,8 +57,6 @@ ul {
 	width: 70vw;
 	height: 100vh;
 	background-color: #d5dadd;
-	//background-size: 70vw auto;
-	//background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -75,7 +73,7 @@ ul {
 	
 	.left-pane {
 		width: 100vw !important;
-		height: auto !important;
+		height: 101% !important;
 		box-shadow: none !important;
 	}
 	
@@ -84,8 +82,13 @@ ul {
 	}
 	
 	.button {
+		margin-top: 10vh;
 		font-size: 24px !important;
 		margin-bottom: 15vh !important;
+		color: white !important;
+		border-width: 0 !important;
+		background-attachment: fixed;
+		background-size: cover;
 	}
 	
 	.logo {
@@ -163,7 +166,6 @@ ul {
 }
 
 .button {
-	background-color: white;
 	border: 2px solid black;
 	text-align: center;
 	color: black;
@@ -298,6 +300,14 @@ footer {
 .content-img-div img {
 	height: 100%;
 	width: auto;
+}
+
+.text {
+	width: 40%;
+}
+
+.text a {
+	
 }
 
 
