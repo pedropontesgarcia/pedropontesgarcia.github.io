@@ -30,7 +30,7 @@ var visible = false;
 var on = false;
 var ctr = 0;
 var running = false;
-setInterval(function(){ typewriter('Cornell University, my alma mater.', 75); }, 500);
+setInterval(function () { typewriter('Cornell University, my alma mater.', 75); }, 500);
 
 function typewriter(txt, speed, iter = 0) {
 	if (visible) { return; }
@@ -46,13 +46,13 @@ function typewriter(txt, speed, iter = 0) {
 
 function typewriter_actual(txt, speed, iter = 0) {
 	var tw = document.getElementById("typewrite");
-	if (iter < txt.length-1) {
+	if (iter < txt.length - 1) {
 		tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter) + '█';
-		setTimeout(function(){typewriter_actual(txt, speed, iter+1);}, speed);
-	} else if (iter == txt.length-1) {
+		setTimeout(function () { typewriter_actual(txt, speed, iter + 1); }, speed);
+	} else if (iter == txt.length - 1) {
 		tw.innerHTML = tw.innerHTML.slice(0, -1) + txt.charAt(iter);
 		caret();
-		setTimeout(function(){typewriter_actual(txt, speed, iter+1);}, speed);
+		setTimeout(function () { typewriter_actual(txt, speed, iter + 1); }, speed);
 	} else {
 		tw.innerHTML = tw.innerHTML;
 	}
@@ -78,7 +78,7 @@ function actual_caret() {
 		tw.innerHTML = '█';
 	}
 	on = !on;
-	setTimeout(function(){ actual_caret(); }, 500);
+	setTimeout(function () { actual_caret(); }, 500);
 }
 
 
@@ -92,11 +92,11 @@ function hoverCaption() {
 
 var resizeTimer;
 window.addEventListener("resize", () => {
-  document.body.classList.add("resize-animation-stopper");
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
-  }, 400);
+	document.body.classList.add("resize-animation-stopper");
+	clearTimeout(resizeTimer);
+	resizeTimer = setTimeout(() => {
+		document.body.classList.remove("resize-animation-stopper");
+	}, 400);
 });
 
 rand = randInt(1, 3);
