@@ -113,3 +113,6 @@ function splashOnMobile(x) {
 var x = window.matchMedia("(max-width: 800px)");
 splashOnMobile(x);
 x.addListener(splashOnMobile);
+
+var vh = window.innerHeight * 0.9;
+document.querySelector('.button').style.backgroundSize = `auto ${vh}px`;
