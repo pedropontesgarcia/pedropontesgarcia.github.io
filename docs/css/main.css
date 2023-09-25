@@ -249,8 +249,12 @@ footer {
 }
 
 .text p {
-	font-family: "MaisonNeue-Book", Helvetica, Arial, sans-serif;
+	font-family: 'Satoshi-Variable', 'MaisonNeue-Book', Helvetica, Arial, sans-serif;
+	src: url('fonts/Satoshi-Variable.woff2') format('woff2'),
+		url('fonts/Satoshi-Variable.woff') format('woff'),
+		url('fonts/Satoshi-Variable.ttf') format('truetype');
 	line-height: 1.5;
+	font-size: medium;
 }
 
 .text h1 {
