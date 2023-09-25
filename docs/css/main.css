@@ -254,7 +254,7 @@ footer {
 		url('../fonts/Satoshi-Variable.woff') format('woff'),
 		url('../fonts/Satoshi-Variable.ttf') format('truetype');
 	line-height: 1.5;
-	font-size: medium;
+	font-size: large;
 }
 
 .text h1 {
