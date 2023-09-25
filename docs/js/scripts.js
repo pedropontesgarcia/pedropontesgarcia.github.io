@@ -6,6 +6,10 @@ function scrollStory() {
 	document.getElementById('my-story').scrollIntoView({ behavior: 'smooth' });
 }
 
+function scrollToTop() {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function randInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min)
 }

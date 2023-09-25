@@ -202,9 +202,11 @@ footer {
 
 .content-img-div {
 	width: 35%;
+	height: 100%;
 	display: flex;
 	flex-flow: column nowrap;
-	row-gap: 3%;
+	/*row-gap: 3%;*/
+	justify-content: space-between;
 }
 
 .content-img-div div {
@@ -249,12 +251,9 @@ footer {
 }
 
 .text p {
-	font-family: 'Satoshi-Variable', 'MaisonNeue-Book', Helvetica, Arial, sans-serif;
-	src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
-		url('../fonts/Satoshi-Variable.woff') format('woff'),
-		url('../fonts/Satoshi-Variable.ttf') format('truetype');
+	font-family: 'MaisonNeue-Book', Helvetica, sans-serif;
 	line-height: 1.5;
-	font-size: large;
+	font-size: medium;
 }
 
 .text h1 {
@@ -360,7 +359,7 @@ a:hover {
 	.text {
 		margin-top: 50px;
 		margin-bottom: 50px;
-		width: 80% !important;
+		width: 80vw !important;
 	}
 }
 
