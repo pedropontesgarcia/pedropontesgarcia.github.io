@@ -85,6 +85,7 @@ ul {
 	top: 0;
 	right: 0;
 	z-index: 999;
+	border: 1px solid black;
 }
 
 .logo:hover {
@@ -179,8 +180,8 @@ footer {
 	background-color: white;
 	color: black;
 	flex-direction: column;
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 1%;
+	padding-bottom: 3%;
 }
 
 .title-projects {
@@ -250,6 +251,10 @@ footer {
 .text p {
 	font-family: "MaisonNeue-Book", Helvetica, Arial, sans-serif;
 	line-height: 1.5;
+}
+
+.text h1 {
+	padding-top: 10%;
 }
 
 .text a {
