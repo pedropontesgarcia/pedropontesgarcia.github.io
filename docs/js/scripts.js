@@ -3,7 +3,7 @@ function scrollOnClick() {
 }
 
 function scrollStory() {
-	document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
+	document.getElementById('my-story').scrollIntoView({ behavior: 'smooth' });
 }
 
 function randInt(min, max) {
@@ -104,15 +104,12 @@ document.querySelector('.right-pane').style.backgroundImage = "url('images/bg/" 
 
 function splashOnMobile(x) {
 	if (x.matches) {
-		document.querySelector('.button').style.backgroundImage = "url('images/bg/" + rand + ".png')";
+		document.querySelector('.button-bg').style.backgroundImage = "url('images/bg/" + rand + ".png')";
 	} else {
-		document.querySelector('.button').style.backgroundImage = "none";
+		document.querySelector('.button-bg').style.backgroundImage = "none";
 	}
 }
 
 var x = window.matchMedia("(max-width: 800px)");
 splashOnMobile(x);
 x.addListener(splashOnMobile);
-
-var vh = window.innerHeight * 0.9;
-document.querySelector('.button').style.backgroundSize = `auto ${vh}px`;

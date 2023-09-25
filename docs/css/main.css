@@ -65,87 +65,7 @@ ul {
 	justify-content: flex-end;
 }
 
-@media screen and (max-width: 800px) {
-	.right-pane {
-		display: none !important;
-		width: 0 !important;
-	}
-
-	.left-pane {
-		width: 100vw !important;
-		height: 101% !important;
-		box-shadow: none !important;
-	}
-
-	.mouse_scroll {
-		display: none !important;
-	}
-
-	.button {
-		margin-top: 10vh;
-		font-size: 24px !important;
-		margin-bottom: 15vh !important;
-		color: white !important;
-		border-width: 0 !important;
-		background-attachment: fixed;
-		background-size: auto 90vh;
-		transition: background 0.3s ease-in-out;
-	}
-
-	.button:hover {
-		background: black !important;
-	}
-
-	.logo {
-		display: none !important;
-	}
-
-	.main-logo {
-		margin-top: 0 !important;
-		width: 80vw !important;
-		max-width: 500px !important;
-	}
-
-	.content-img-div {
-		display: none !important;
-	}
-
-	ul {
-		padding-inline-start: 0;
-	}
-
-	.link-list {
-		font-size: 36px !important;
-		line-height: 96px !important;
-	}
-
-	.text {
-		margin-top: 50px;
-		margin-bottom: 50px;
-		width: 80% !important;
-	}
-}
-
-@media screen and (max-height: 600px) {
-	.mouse_scroll {
-		display: none !important;
-	}
-
-	.main-logo {
-		margin-top: 0 !important;
-	}
-
-	.top {
-		height: 600px !important;
-	}
-
-	.pane {
-		height: 600px !important;
-	}
-}
-
 .right-pane>p {
-	/*font-style: italic;*/
 	color: white;
 	padding: 10px 20px;
 	background-color: black;
@@ -185,7 +105,7 @@ ul {
 	}
 }
 
-.button {
+.button-content a {
 	border: 2px solid black;
 	text-align: center;
 	color: black;
@@ -196,7 +116,7 @@ ul {
 	transition: 0.2s;
 }
 
-.button:hover {
+.button-content a:hover {
 	background-color: black;
 	color: white;
 }
@@ -293,29 +213,7 @@ footer {
 	height: 60%;
 	width: auto;
 	object-fit: cover;
-}
-
-
-#typewrite {
-	display: inline;
-	text-align: right;
-	cursor: pointer;
-	transition: color 0.2s;
-}
-
-#typewrite:hover {
-	color: white;
-}
-
-#typewrite:hover+#caret {
-	color: white;
-}
-
-#caret {
-	display: inline;
-	text-align: right;
-	width: 0;
-	transition: color 0.2s;
+	max-width: 100%;
 }
 
 .content-img-div img {
@@ -323,24 +221,150 @@ footer {
 	width: auto;
 }
 
-.text {
-	width: 40%;
+.story {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.story .content-img-div div {
+	display: flex;
+	width: 95%;
+	justify-content: flex-start;
+	color: black;
+}
+
+.story div {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.text p {
+	font-family: "MaisonNeue-Book", Helvetica, Arial, sans-serif;
+	line-height: 1.5;
 }
 
 .text a {
-	text-decoration: underline;
-	transition: 0.2s;
+	text-decoration: none;
+	color: black;
+	transition: all 0.3s ease;
+	font-weight: bold;
+	border-bottom: 2px solid #000;
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.text a:active {
+	transform: translateY(0px);
 }
 
 .text a:hover {
 	color: white;
 	background-color: black;
 	text-decoration: none;
+	transform: translateY(-1px);
 }
 
+a:hover {
+	cursor: pointer;
+}
 
+@media screen and (max-width: 800px) {
+	.right-pane {
+		display: none !important;
+		width: 0 !important;
+	}
 
+	.left-pane {
+		width: 100vw !important;
+		height: 101% !important;
+		box-shadow: none !important;
+	}
 
+	.mouse_scroll {
+		display: none !important;
+	}
+
+	.button-bg {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 100vh;
+		width: auto;
+		position: fixed;
+	}
+
+	.button-content {
+		position: absolute;
+		margin-top: 5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+	}
+
+	.button-content a {
+		margin-top: 10vh;
+		font-size: 24px !important;
+		margin-bottom: 15vh !important;
+		color: white !important;
+		border-width: 0 !important;
+		background-attachment: fixed;
+		background-size: auto 90vh;
+		transition: background 0.3s ease-in-out;
+		position: absolute;
+	}
+
+	.button-content a:hover {
+		background: black !important;
+	}
+
+	.logo {
+		display: none !important;
+	}
+
+	.main-logo {
+		margin-top: 0 !important;
+		width: 80vw !important;
+		max-width: 500px !important;
+	}
+
+	.content-img-div {
+		display: none !important;
+	}
+
+	ul {
+		padding-inline-start: 0;
+	}
+
+	.link-list {
+		font-size: 36px !important;
+		line-height: 96px !important;
+	}
+
+	.text {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		width: 80% !important;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	.mouse_scroll {
+		display: none !important;
+	}
+
+	.main-logo {
+		margin-top: 0 !important;
+	}
+
+	.top {
+		height: 600px !important;
+	}
+
+	.pane {
+		height: 600px !important;
+	}
+}
 
 /* Mouse stuff */
 .mouse_scroll {
@@ -351,7 +375,6 @@ footer {
 	height: 100px;
 	margin-top: auto;
 }
-
 
 .m_scroll_arrows {
 	display: block;
@@ -424,4 +447,27 @@ footer {
 	100% {
 		opacity: 1;
 	}
+}
+
+/* Typewriter stuff */
+#typewrite {
+	display: inline;
+	text-align: right;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+#typewrite:hover {
+	color: white;
+}
+
+#typewrite:hover+#caret {
+	color: white;
+}
+
+#caret {
+	display: inline;
+	text-align: right;
+	width: 0;
+	transition: color 0.2s;
 }
