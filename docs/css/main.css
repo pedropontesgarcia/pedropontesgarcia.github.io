@@ -178,6 +178,9 @@ footer {
 .middle-white {
 	background-color: white;
 	color: black;
+	flex-direction: column;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 .title-projects {
@@ -225,7 +228,7 @@ footer {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	width: 80%;
-	margin: 0 auto;
+	margin: 2% auto;
 }
 
 .story .content-img-div div {
@@ -235,9 +238,13 @@ footer {
 	color: black;
 }
 
+.story .content-img-div img {
+	padding-top: 10%;
+}
+
 .story div {
 	width: 70%;
-	margin: 0 auto;
+	margin: auto auto;
 }
 
 .text p {
@@ -250,7 +257,7 @@ footer {
 	color: black;
 	transition: all 0.3s ease;
 	font-weight: bold;
-	border-bottom: 2px solid #000;
+	border-bottom: 2px solid black;
 	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
