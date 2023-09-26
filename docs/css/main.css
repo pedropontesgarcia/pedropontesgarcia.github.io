@@ -181,7 +181,15 @@ footer {
 	color: black;
 	flex-direction: column;
 	padding-top: 1%;
-	padding-bottom: 3%;
+	padding-bottom: 4%;
+}
+
+.middle-gray {
+	background-color: #b4c3ca;
+	color: black;
+	flex-direction: column;
+	padding-top: 1%;
+	padding-bottom: 5%;
 }
 
 .title-projects {
@@ -336,6 +344,11 @@ a:hover {
 		min-height: 50vh !important;
 	}
 
+	.middle-white,
+	.middle-gray {
+		padding-bottom: 7%;
+	}
+
 	.button-content a:hover {
 		background: black !important;
 	}
@@ -359,7 +372,7 @@ a:hover {
 	}
 
 	.link-list {
-		font-size: 300% !important;
+		font-size: 250% !important;
 		line-height: 300% !important;
 	}
 

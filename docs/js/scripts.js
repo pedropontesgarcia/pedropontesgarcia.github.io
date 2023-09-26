@@ -6,6 +6,10 @@ function scrollStory() {
 	document.getElementById('my-story').scrollIntoView({ behavior: 'smooth' });
 }
 
+function scrollProjects() {
+	document.getElementById('my-projects').scrollIntoView({ behavior: 'smooth' });
+}
+
 function scrollToTop() {
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 }
