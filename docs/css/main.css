@@ -301,6 +301,7 @@ a:hover {
 	}
 
 	.button-bg {
+		display: none;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -310,6 +311,7 @@ a:hover {
 	}
 
 	.button-content {
+		display: none;
 		position: absolute;
 		margin-top: 5rem;
 		left: 50%;
@@ -318,6 +320,7 @@ a:hover {
 	}
 
 	.button-content a {
+		display: none;
 		margin-top: 10vh;
 		font-size: 24px !important;
 		margin-bottom: 15vh !important;
@@ -327,6 +330,10 @@ a:hover {
 		background-size: auto 90vh;
 		transition: background 0.3s ease-in-out;
 		position: absolute;
+	}
+
+	.middle {
+		min-height: 50vh !important;
 	}
 
 	.button-content a:hover {
@@ -352,8 +359,8 @@ a:hover {
 	}
 
 	.link-list {
-		font-size: 36px !important;
-		line-height: 96px !important;
+		font-size: 300% !important;
+		line-height: 300% !important;
 	}
 
 	.text {
