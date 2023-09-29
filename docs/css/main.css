@@ -351,6 +351,10 @@ a:hover {
 		padding-bottom: 7%;
 	}
 
+	.middle-black p {
+		margin: auto !important;
+	}
+
 	.button-content a:hover {
 		background: black !important;
 	}
