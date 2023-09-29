@@ -292,7 +292,33 @@ a:hover {
 	cursor: pointer;
 }
 
+.button-mobile {
+	display: none
+}
+
 @media screen and (max-width: 800px) {
+	.button-mobile {
+		display: block;
+		font-size: min(5vw, 24px);
+		border: 2px solid black;
+		padding: 5px 10px;
+		transition: 0.2s;
+	}
+
+	.button-mobile:hover {
+		background-color: black;
+	}
+
+	.button-mobile a {
+		text-align: center;
+		color: black;
+		text-decoration: none;
+	}
+
+	.button-mobile a:hover {
+		color: white;
+	}
+
 	.right-pane {
 		display: none !important;
 		width: 0 !important;
@@ -300,7 +326,7 @@ a:hover {
 
 	.left-pane {
 		width: 100vw !important;
-		height: 101% !important;
+		height: 100dvh !important;
 		box-shadow: none !important;
 	}
 
@@ -308,40 +334,16 @@ a:hover {
 		display: none !important;
 	}
 
-	.button-bg {
-		display: none;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		height: 100vh;
-		width: auto;
-		position: fixed;
-	}
-
 	.button-content {
 		display: none;
-		position: absolute;
-		margin-top: 5rem;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 80%;
 	}
 
 	.button-content a {
 		display: none;
-		margin-top: 10vh;
-		font-size: 24px !important;
-		margin-bottom: 15vh !important;
-		color: white !important;
-		border-width: 0 !important;
-		background-attachment: fixed;
-		background-size: auto 90vh;
-		transition: background 0.3s ease-in-out;
-		position: absolute;
 	}
 
 	.middle {
-		min-height: 50vh !important;
+		min-height: 0 !important;
 	}
 
 	.middle-white,
@@ -372,7 +374,7 @@ a:hover {
 	}
 
 	.link-list {
-		font-size: 250% !important;
+		font-size: min(10vw, 42px) !important;
 		line-height: 300% !important;
 	}
 
