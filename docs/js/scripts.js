@@ -124,7 +124,8 @@ document.querySelector(".right-pane").style.backgroundImage =
   "url('/images/bg/" + rand + ".png')";
 
 function goTo(s) {
-  window.location.href = "/" + s + "/index.html?bg=" + rand;
+  window.location.href =
+    "https://pedropontesgarcia.com/" + s + "/index.html?bg=" + rand;
 }
 
 function splashOnMobile(x) {
