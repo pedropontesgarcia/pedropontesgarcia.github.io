@@ -28,7 +28,11 @@ ul {
 
 .top div.text {
   width: 60%;
-  margin-bottom: 10vh;
+  margin-top: -5vh;
+}
+
+.top p {
+  margin-bottom: 5vh;
 }
 
 .pane {
