@@ -128,7 +128,7 @@ ul {
   border: 2px solid black;
   text-align: center;
   color: black;
-  display: inline-block;
+  display: block;
   font-size: 1vw;
   text-decoration: none;
   padding: 5px 10px;
