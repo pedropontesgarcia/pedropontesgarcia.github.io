@@ -117,9 +117,15 @@ window.addEventListener("resize", () => {
   }, 400);
 });
 
-rand = randInt(1, 3);
+const urlParams = new URLSearchParams(window.location.search);
+bg = urlParams.get("bg");
+if (bg == null) bg = randInt(1, 3);
 document.querySelector(".right-pane").style.backgroundImage =
   "url('/images/bg/" + rand + ".png')";
+
+function goTo(s) {
+  window.location.href = "/" + s + "/index.html?bg=" + rand;
+}
 
 function splashOnMobile(x) {
   if (x.matches) {
