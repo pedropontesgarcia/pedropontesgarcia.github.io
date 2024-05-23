@@ -28,11 +28,21 @@ ul {
 
 .top div.text {
   width: 60%;
-  margin-top: -5vh;
+  margin-top: -2vh;
 }
 
 .top p {
   margin-bottom: 5vh;
+}
+
+.back-arrow {
+  width: 60%;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 4vh;
+  color: black;
+  margin-top: -5vh;
 }
 
 .pane {
@@ -123,6 +133,7 @@ ul {
   text-decoration: none;
   padding: 5px 10px;
   transition: 0.2s;
+  margin-bottom: 2vh;
 }
 
 .button-content a:hover {
