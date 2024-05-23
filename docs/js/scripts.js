@@ -121,11 +121,10 @@ const urlParams = new URLSearchParams(window.location.search);
 bg = urlParams.get("bg");
 if (bg == null) bg = randInt(1, 3);
 document.querySelector(".right-pane").style.backgroundImage =
-  "url('/images/bg/" + rand + ".png')";
+  "url('/images/bg/" + bg + ".png')";
 
 function goTo(s) {
-  window.location.href =
-    "https://pedropontesgarcia.com/" + s + "/index.html?bg=" + rand;
+  window.location.href = "/" + s + "/index.html?bg=" + bg;
 }
 
 function splashOnMobile(x) {
