@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Symbols+2">
+	<link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
+	<link href="https://fonts.cdnfonts.com/css/noto-sans-symbols-2" rel="stylesheet">
+	<title>Pedro Pontes García</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="icon" href="images/favicon.ico" />
+</head>
+
+<body>
+	<a class="logo" onclick="scrollToTop()"></a>
+	<div class="top">
+		<div class="pane left-pane">
+			<div class="main-logo"></div>
+			<div class="button-content">
+				<a href="documents/CV.pdf" target="_blank">My CV 🡭</a>
+			</div>
+			<div class="button-mobile">
+				<a href="documents/CV.pdf" target="_blank">My CV 🡭</a>
+			</div>
+			<div class="mouse_scroll" onclick="scrollOnClick()">
+				<div class="mouse">
+					<div class="wheel"></div>
+				</div>
+				<div>
+					<span class="m_scroll_arrows unu"></span>
+					<span class="m_scroll_arrows doi"></span>
+					<span class="m_scroll_arrows trei"></span>
+				</div>
+			</div>
+		</div>
+		<div class="pane right-pane">
+			<p>Flekke, Norway</p>
+		</div>
+	</div>
+	<div class="middle middle-black" id="content">
+		<p class="reveal">
+		<ul class="link-list reveal">
+			<li><a onclick="scrollProjects()">My projects</a></li>
+			<li><a onclick="scrollStory()">My story</a></li>
+			<li><a onclick="goTo('photo')">Photography</a></li>
+		</ul>
+		</p>
+		<div class="reveal content-img-div">
+			<img src="images/cornell.jpg"></img>
+			<div>
+				<p id="typewrite" onmouseover="hoverCaption()" onclick="scrollStory()"></p>
+				<p id="caret"></p>
+			</div>
+		</div>
+	</div>
+	<div class="middle middle-gray" id="my-projects">
+		<div class="reveal story">
+			<div class="content-img-div">
+				<img src="images/libgdx.png"></img>
+			</div>
+			<div class="text">
+				<h1>3D terrain generation with <i>libGDX</i></h1>
+				<p>Pursuing my interest in computer graphics, I have been on a journey through the world of 3D terrain
+					generation using <a href="https://libgdx.com/" target="_blank">libGDX</a>, a Java-based lightweight
+					game development framework. I have been working with height field generation and rendering, using
+					triangle meshes, textures, height maps, and many concepts from linear algebra.</p>
+				<p>This is an ongoing personal project that is helping me understand concepts in game development and 3D
+					graphics, allowing me to apply all the theoretical knowledge I have gained in my coursework to a
+					more hands-on scenario.</p>
+			</div>
+		</div>
+		<div class="reveal story">
+			<div class="text">
+				<h1>Building a 2D side-scroller engine in OCaml</h1>
+				<p>Together with Luis Hernández Rocha and Bisola Okunola, I built a <a
+						href="https://github.com/pedropontesgarcia/concrete-halls" target="_blank">lightweight
+						side-scroller engine</a>
+					sitting atop SDL2. We completed this project for the course <a
+						href="https://cs3110.github.io/textbook/cover.html" target="_blank">CS 3110</a>, and received
+					honors grades for it.</p>
+				<p>Using a functional programming language to build a modern interactive application poses many
+					challenges; the standard object-oriented model offers many seemingly desirable constructs that are
+					nonexistent in stateless programming. However, <a href="https://www.defmacro.org/2006/06/19/fp.html"
+						target="_blank">the functional paradigm</a> resolves many difficult issues that affect OOP,
+					makes it easier to produce correct code, unlocks many benefits in concurrent programming, and it
+					ultimately teaches programmers a different and fascinating way to understand computing.</p>
+			</div>
+			<div class="content-img-div">
+				<img src="images/neocaml.png"></img>
+			</div>
+		</div>
+		<div class="reveal story">
+			<div class="content-img-div">
+				<img src="images/pendulum.png"></img>
+			</div>
+			<div class="text">
+				<h1>Modelling pendulums</h1>
+				<p>A simple pendulum seems to be in simple harmonic motion. The word <i>seems</i> is intentional: in
+					reality, the circular nature of pendular motion complicates its analysis, and when the simple
+					harmonic approximation is discarded, or when damping is considered, the differential model that
+					emerges seems to evade analytic solutions.</p>
+				<p>By introducing simple concepts from the field of differential equations, this paper sought to provide
+					a critical evaluation of four different models of pendular motion, presenting closed-form solutions
+					wherever possible, and otherwise providing simulations built using scientific computing tools.
+				</p>
+				<p>I am honored to have been <a
+						href="https://www.forskningsradet.no/unge-forskere/nyheter/vinnere-i-unge-forskere-2022/#AlleNT"
+						target="_blank">recognized</a> by Norges Forskingsrådet, Norway's national research council,
+					with its Young Researchers' award. My paper was published on their website, and is <a
+						href="https://www.forskningsradet.no/contentassets/6d92c5f5c3ad4380806d02223a11eaf8/015-pontes-garcia-pedro.pdf"
+						target="_blank">publicly available for reading</a>.</p>
+			</div>
+		</div>
+	</div>
+	<div class="middle middle-white" id="my-story">
+		<div class="reveal story">
+			<div class="content-img-div">
+				<img src="images/rcn.jpg"></img>
+				<div>
+					<p>UWC RCN in winter.</p>
+				</div>
+				<img src="images/madrid.jpg"></img>
+				<div>
+					<p>Bank of Spain and <i>Cibeles</i> in Madrid.</p>
+				</div>
+				<img src="images/casc.jpg"></img>
+				<div>
+					<p>Cascadilla Gorge Trail at Cornell.</p>
+				</div>
+			</div>
+			<div class="text">
+				<h1>A tale of fjords, cities and mountains</h1>
+				<p>When people ask me about my favourite memory, many things come to my mind. I recall staring into the
+					fjord that hosted me during the two most critical years of my life, listening to the subtle drumming
+					of raindrops on the surface of the water; I also recall lying on thick snow, looking at early
+					Norwegian sunsets surrounded by friends.</p>
+				<p>I had the privilege to spend two years of my life in one of the most <a href="photo/rcn/index.html">beautiful</a> places I will
+					ever see: <a href="https://uwcrcn.no" target="_blank">UWC Red Cross Nordic</a>, a school on a fjord,
+					with two hundred students from ninety different countries. It was the place where I became who I am
+					today, and it made me fall in love with diversity, with culture, with perspectives so far from my
+					own that they made me question my own reality.</p>
+				<p>I am originally from Madrid, Spain, where my wonderful family and friends raised me as an
+					ever-curious
+					inquirer, instilling in me a love of learning and discovering challenges. For me, Madrid is a
+					beautiful Neoclassical city that brings me peace and makes me feel at home.</p>
+				<h1>Across the Atlantic</h1>
+				<p>After my time in Norway, I decided to continue my academic journey in a field I love: Computer
+					Science. There is something about proving a theorem in graph theory, or building a complex
+					application that finally passes the test cases, that I find so exhilarating. I was admitted to
+					<a href="https://cornell.edu" target="_blank">Cornell University</a> under the Davis UWC Scholarship
+					Program, and I have had the pleasure to expand my academic and personal perspectives at the College
+					of Arts and Sciences during the past year and a half.
+				</p>
+				<p>Cornell has a charmingly graceful campus, spanning hills, gorges, forests, fields, botanical
+					gardens and stunning outlooks, as well as countless historical classroom halls, libraries, and
+					museums. It is a place with its own soul, with a community of students dedicated to all kinds of
+					academic disciplines.</p>
+				<p>
+					And for me, as a prospective computer scientist and mathematician, Cornell offers an
+					impressively qualified and renowned faculty, always willing to push my own boundaries while
+					providing me with all the resources I need to succeed. On this campus, I have had some of the most
+					critical academic experiences in my life, and I hope that Cornell continues to push me forward as I
+					keep on pursuing my passion for learning.</p>
+			</div>
+		</div>
+	</div>
+</body>
+<footer>
+	<p>&copy; 2023-2024 Pedro Pontes García</p>
+</footer>
+<script src="js/scripts.js"></script>
+
+</html>
