@@ -15,7 +15,6 @@ import {
 function Item({ text, url }: any) {
   var cls = "text-center w-full block p-4";
   if (url == undefined) cls += " cursor-default";
-  console.log(url);
   return (
     <a href={url} className={cls}>
       \{text}
