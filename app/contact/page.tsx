@@ -20,7 +20,7 @@ export default function Home() {
             >
               pedropontesgr@gmail.com
             </a>{" "}
-            //{" "}
+            /{" "}
             <a href="mailto:pp457@cornell.edu" className="hover:underline">
               pp457@cornell.edu
             </a>

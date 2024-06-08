@@ -3,7 +3,6 @@ import { Outfit, JetBrains_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "./nav";
 import Footer from "./footer";
-import Cursor from "./cursor";
 
 const sans = Outfit({ subsets: ["latin"], variable: "--font-sans" });
 const serif = Open_Sans({

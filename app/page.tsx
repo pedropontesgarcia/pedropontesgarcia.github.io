@@ -62,12 +62,10 @@ function Description() {
     >
       <Descriptor
         text="software developer"
-        msg={[
-          "I have worked on several medium-scale software projects, both academic and personal. " +
-            "Some examples include a functional-style interpreter in OCaml, the game ",
-          <i>Phytopolis</i>,
-          ", and a procedural terrain generator in libGDX.",
-        ]}
+        msg={`
+          I have worked on several medium-scale software projects, both academic and personal. Some examples include a functional-style interpreter in OCaml, the game ${(
+            <i>Phytopolis</i>
+          )}, and a procedural terrain generator in libGDX.`}
         cursorPosition={cursorPosition}
       />
       <Descriptor
