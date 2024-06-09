@@ -183,7 +183,7 @@ function Top() {
     }, delay);
   }, [index]);
 
-  const [photo, setPhoto] = useState(randInt(1, 84));
+  const [photo, setPhoto] = useState(randInt(1, 98));
   useEffect(() => {
     if (blinking && !locked) {
       locked = true;
@@ -212,7 +212,7 @@ function Top() {
       <div className="xl:basis-7/12 max-xl:lg:basis-1/2 max-lg:md:basis-2/6 basis-full overflow-clip mt-0 sm:h-screen max-sm:mt-7">
         <img
           className="size-full object-cover mt-0"
-          src={`/images/gallery/${photo}.jpg`}
+          src={`/images/gallery/${photo}.webp`}
         ></img>
       </div>
     </div>
