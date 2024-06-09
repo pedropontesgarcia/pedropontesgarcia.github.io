@@ -5,7 +5,22 @@ import PhotoAlbum, { ClickHandlerProps, Photo } from "react-photo-album";
 import { Paragraph } from "../paragraph";
 
 const pref = "/images/gallery/";
-const ext = ".jpg";
+const ext = ".webp";
+
+interface ImageSize {
+  width: number;
+  height: number;
+}
+
+export function getImageSize(src: string): Promise<ImageSize> {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.src = src;
+    image.onload = () => {
+      resolve({ width: image.width, height: image.height });
+    };
+  });
+}
 
 type PhotoIn = {
   n: number;
@@ -16,9 +31,42 @@ type PhotoIn = {
 
 export type PhotosIn = PhotoIn[];
 
-export type GalleryProps = { photosIn: PhotosIn; title: string; desc: string };
+export type GalleryProps = {
+  photosIn: PhotoIn[];
+  nFrom: number;
+  nTo: number;
+  title: string;
+  desc: string;
+};
 
-export default function Gallery({ photosIn, title, desc }: GalleryProps) {
+export default function Gallery({
+  photosIn,
+  nFrom,
+  nTo,
+  title,
+  desc,
+}: GalleryProps) {
+  const [started, setStarted] = useState(false);
+  const [nPicsAdded, setNPicsAdded] = useState(0);
+  if (!started) {
+    setStarted(true);
+    Array.from(new Array(nTo - nFrom + 1), (_, i) => i + nFrom)
+      .map((i) => {
+        let url = "/images/gallery/" + i + ".webp";
+        return { n: i, dimp: getImageSize(url) };
+      })
+      .forEach(({ n, dimp }) =>
+        dimp.then((is) => {
+          let newPhoto = { n: n, w: is.width, h: is.height, t: "" };
+          if (!photosIn.find(({ n }) => n === newPhoto.n)) {
+            photosIn.push(newPhoto);
+            photosIn.sort((a, b) => a.n - b.n);
+          }
+          setNPicsAdded(n);
+        })
+      );
+  }
+
   const [popupState, setPopupState] = useState({
     shown: false,
     src: "",
@@ -43,13 +91,13 @@ export default function Gallery({ photosIn, title, desc }: GalleryProps) {
       {popupState.shown && (
         <>
           <div
-            className="fixed w-screen h-screen top-0 left-0 bg-[rgba(6,6,6,0.8)] z-40"
+            className="fixed w-screen h-screen top-0 left-0 bg-[rgba(6,6,6,0.9)] z-40"
             onClick={resetPopupState}
           />
-          <div className="fixed w-screen h-screen top-0 left-0 pointer-events-none flex items-start justify-center z-50">
+          <div className="fixed w-screen h-screen top-0 left-0 pointer-events-none flex lg:items-start items-center justify-center z-50">
             <img
               src={popupState.src}
-              className="pointer-events-auto z-50 max-h-[80%] mt-[5%] cursor-zoom-in"
+              className="relative pointer-events-auto z-50 max-h-[80%] max-w-[90%] mt-[5%] cursor-zoom-in before:absolute before:top-0 before:left-0 before:bg-white before:p-2 before:size-32"
               onClick={(e) => (popupState.zoom = true)}
             ></img>
           </div>

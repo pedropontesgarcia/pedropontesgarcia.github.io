@@ -8,14 +8,16 @@ export default function Home() {
     <>
       <Gallery
         photosIn={photosIn}
+        nFrom={46}
+        nTo={74}
         title="ithaca"
         desc="cornell's campus and surroundings, 2023-2024"
       />
-      <Gallery
+      {/* <Gallery
         photosIn={photosIn}
         title="adirondacks"
         desc="upper saranac & st. regis, oct 2023"
-      />
+      /> */}
     </>
   );
 }
