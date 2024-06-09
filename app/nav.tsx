@@ -6,6 +6,7 @@ import {
   autoUpdate,
   offset,
   useHover,
+  useDismiss,
   useClick,
   safePolygon,
   useInteractions,
@@ -147,8 +148,12 @@ function ClickItemRight({ text, url, children, first = false }: any) {
   });
 
   const click = useClick(context);
+  const dismiss = useDismiss(context);
 
-  const { getReferenceProps, getFloatingProps } = useInteractions([click]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    dismiss,
+  ]);
 
   const headingId = useId();
   return (
@@ -198,8 +203,12 @@ function ClickSubitemOpensLeft({ text, children }: any) {
   });
 
   const click = useClick(context);
+  const dismiss = useDismiss(context);
 
-  const { getReferenceProps, getFloatingProps } = useInteractions([click]);
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    click,
+    dismiss,
+  ]);
 
   const headingId = useId();
   return (

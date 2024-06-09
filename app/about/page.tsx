@@ -13,8 +13,11 @@ export default function Home() {
         </p>
         <p className="mb-5">
           I had the privilege to spend two years of my life in one of the most{" "}
-          <a className="underline" href="photo/rcn/index.html">
-            vibrant
+          <a
+            className="underline hover:bg-white hover:text-black transition-all"
+            href="photo/rcn/index.html"
+          >
+            vibrant&#x2197;
           </a>{" "}
           places I will ever see:{" "}
           <a href="https://uwcrcn.no" target="_blank">
