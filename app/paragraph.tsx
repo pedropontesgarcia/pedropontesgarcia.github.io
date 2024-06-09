@@ -9,8 +9,8 @@ export function Paragraph({ title, children, brk = false, left = false }: any) {
   }
   return (
     <div className={dcls}>
-      <p className={tcls}>{title}</p>
-      <p className={pcls}>{children}</p>
+      <div className={tcls}>{title}</div>
+      <div className={pcls}>{children}</div>
     </div>
   );
 }
