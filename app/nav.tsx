@@ -135,7 +135,7 @@ function ItemRight({ text, url, children, first = false }: any) {
 
 export default function Nav() {
   return (
-    <div className="fixed bottom-0 left-0 flex z-20 w-full bg-black border-t border-white justify-normal font-teachers">
+    <div className="fixed bottom-0 left-0 flex z-20 w-full bg-black border-t border-white justify-normal font-teachers select-none">
       {" "}
       <ul className="flex flex-wrap items-center text-2xl text-white w-full max-lg:hidden">
         <ItemLeft text="home" url="/" />
