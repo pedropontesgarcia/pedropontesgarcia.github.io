@@ -19,34 +19,64 @@ function Descriptor({ text, msg, cursorPosition }: any) {
     if (cursorPosition.top != 0 || cursorPosition.left != 0) setVisible(true);
   };
   return (
-    <a
-      className="hover:text-white hover:no-outline cursor-none select-none"
-      onMouseEnter={updateVisible}
-      onMouseLeave={() => setVisible(false)}
-      onMouseMove={updateVisible}
-    >
-      {text}{" "}
-      {visible ? (
-        <div
-          className="pointer-events-none z-30 absolute"
-          style={{ ...cursorPosition }}
-        >
-          <div className="rounded-full absolute p-1 w-1 h-1 border-white border-2 max-sm:hidden" />
+    <>
+      <a
+        className="hover:text-white hover:no-outline cursor-none select-none max-sm:hidden"
+        onMouseEnter={updateVisible}
+        onMouseLeave={() => setVisible(false)}
+        onMouseMove={updateVisible}
+      >
+        {text}{" "}
+        {visible ? (
           <div
-            className={[
-              "text-base break-normal max-w-96 mt-4 ml-4 block bg-black text-white border border-white " +
-                "p-4 relative before:absolute before:top-[0.3em] before:left-[0.3em] before:w-full " +
-                "before:h-full before:bg-white before:z-[-1] no-outline max-sm:fixed " +
-                "max-sm:top-0 max-sm:left-0 max-sm:before:hidden max-sm:border-2",
-            ].join()}
+            className="pointer-events-none z-30 absolute"
+            style={{ ...cursorPosition }}
           >
-            {msg}
+            <div className="rounded-full absolute p-1 w-1 h-1 border-white border-2 max-sm:hidden" />
+            <div
+              className={[
+                "text-base break-normal max-w-96 mt-4 ml-4 block bg-black text-white border border-white " +
+                  "p-4 relative before:absolute before:top-[0.3em] before:left-[0.3em] before:w-full " +
+                  "before:h-full before:bg-white before:z-[-1] no-outline max-sm:fixed " +
+                  "max-sm:top-0 max-sm:left-0 max-sm:right-0 max-sm:max-w-none max-sm:mr-4 max-sm:before:hidden max-sm:border-2",
+              ].join()}
+            >
+              {msg}
+            </div>
           </div>
-        </div>
-      ) : (
-        ""
-      )}
-    </a>
+        ) : (
+          ""
+        )}
+      </a>
+      <a
+        className="hover:text-white hover:no-outline cursor-none select-none sm:hidden"
+        onMouseLeave={() => setVisible(false)}
+        onMouseMove={updateVisible}
+        onClick={() => setVisible(!visible)}
+      >
+        {text}{" "}
+        {visible ? (
+          <div
+            className="pointer-events-none z-30 absolute"
+            style={{ ...cursorPosition }}
+          >
+            <div className="rounded-full absolute p-1 w-1 h-1 border-white border-2 max-sm:hidden" />
+            <div
+              className={[
+                "text-base break-normal max-w-96 mt-4 ml-4 block bg-black text-white border border-white " +
+                  "p-4 relative before:absolute before:top-[0.3em] before:left-[0.3em] before:w-full " +
+                  "before:h-full before:bg-white before:z-[-1] no-outline max-sm:fixed " +
+                  "max-sm:top-0 max-sm:left-0 max-sm:right-0 max-sm:max-w-none max-sm:mr-4 max-sm:before:hidden max-sm:border-2",
+              ].join()}
+            >
+              {msg}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </a>
+    </>
   );
 }
 

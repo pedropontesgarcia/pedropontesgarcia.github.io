@@ -57,14 +57,7 @@ function ItemLeft({ text, url, children }: any) {
     }),
   });
 
-  const click = useClick(context);
-
   const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
-
-  const clickProps = useInteractions([click]);
-
-  const getClickReferenceProps = clickProps.getReferenceProps;
-  const getClickFloatingProps = clickProps.getFloatingProps;
 
   const headingId = useId();
   return (
@@ -72,14 +65,7 @@ function ItemLeft({ text, url, children }: any) {
       <li
         ref={refs.setReference}
         {...getReferenceProps()}
-        className="min-w-48 border-white border-r hover:bg-white hover:text-black max-sm:hidden"
-      >
-        <Item text={text.toUpperCase()} url={url} />
-      </li>
-      <li
-        ref={refs.setReference}
-        {...getClickReferenceProps()}
-        className="min-w-48 border-white border-r hover:bg-white hover:text-black sm:hidden"
+        className="min-w-48 border-white border-r hover:bg-white hover:text-black"
       >
         <Item text={text.toUpperCase()} url={url} />
       </li>
