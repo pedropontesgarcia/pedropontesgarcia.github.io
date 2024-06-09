@@ -20,7 +20,7 @@ function Descriptor({ text, msg, cursorPosition }: any) {
   };
   return (
     <a
-      className="hover:text-white hover:no-outline cursor-none"
+      className="hover:text-white hover:no-outline cursor-none select-none"
       onMouseEnter={updateVisible}
       onMouseLeave={() => setVisible(false)}
       onMouseMove={updateVisible}
@@ -31,12 +31,13 @@ function Descriptor({ text, msg, cursorPosition }: any) {
           className="pointer-events-none z-30 absolute"
           style={{ ...cursorPosition }}
         >
-          <div className="rounded-full absolute p-1 w-1 h-1 border-white border-2" />
+          <div className="rounded-full absolute p-1 w-1 h-1 border-white border-2 max-sm:hidden" />
           <div
             className={[
               "text-base break-normal max-w-96 mt-4 ml-4 block bg-black text-white border border-white " +
                 "p-4 relative before:absolute before:top-[0.3em] before:left-[0.3em] before:w-full " +
-                "before:h-full before:bg-white before:z-[-1]",
+                "before:h-full before:bg-white before:z-[-1] no-outline max-sm:fixed " +
+                "max-sm:top-0 max-sm:left-0 max-sm:before:hidden max-sm:border-2",
             ].join()}
           >
             {msg}
@@ -164,14 +165,11 @@ function Top() {
   }, [index]);
 
   return (
-    <div className="flex flex-wrap size-full sm:min-h-screen flex-row font-sans text-9xl items-start">
-      <div
-        className="bg-black xl:basis-5/12 max-xl:lg:basis-1/2 max-lg:md:basis-4/6 basis-full size-full min-h-screen p-4"
-        style={{ minWidth: "32rem" }}
-      >
+    <div className="flex flex-wrap size-full sm:min-h-screen flex-row font-sans text-8xl sm:text-9xl items-start">
+      <div className="bg-black xl:basis-5/12 max-xl:lg:basis-1/2 max-lg:md:basis-4/6 basis-full size-full sm:min-h-screen p-4 sm:min-w-[32rem]">
         <p className="text-white">
           <a
-            className="hover:text-black hover:font-outline-2"
+            className="hover:text-black hover:font-outline-2 select-none"
             href=""
             style={{ whiteSpace: "break-spaces" }}
           >
@@ -181,7 +179,7 @@ function Top() {
         </p>
         <Description />
       </div>
-      <div className="xl:basis-7/12 max-xl:lg:basis-1/2 max-lg:md:basis-2/6 basis-full overflow-clip mt-0 sm:h-screen">
+      <div className="xl:basis-7/12 max-xl:lg:basis-1/2 max-lg:md:basis-2/6 basis-full overflow-clip mt-0 sm:h-screen max-sm:mt-7">
         <img
           className="size-full object-cover mt-0"
           src={`/images/gallery/${photo}.jpg`}

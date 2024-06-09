@@ -85,15 +85,51 @@ function ItemLeft({ text, url, children }: any) {
   );
 }
 
-function ItemRight({ text, url, first = false }: any) {
+function ItemRight({ text, url, children, first = false }: any) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { refs, floatingStyles, context } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [offset(1)],
+    placement: "top",
+    whileElementsMounted: autoUpdate,
+  });
+
+  const hover = useHover(context, {
+    handleClose: safePolygon({
+      requireIntent: false,
+    }),
+  });
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
+
+  const headingId = useId();
   return (
-    <li
-      className={`min-w-48 border-white border-l hover:bg-white hover:text-black ${
-        first ? "ml-auto" : ""
-      }`}
-    >
-      <Item text={text.toLowerCase()} url={url} />
-    </li>
+    <>
+      <li
+        ref={refs.setReference}
+        {...getReferenceProps()}
+        className={`min-w-48 border-white border-l hover:bg-white hover:text-black ${
+          first ? "ml-auto" : ""
+        }`}
+      >
+        <Item text={text.toLowerCase()} url={url} />
+      </li>
+      {isOpen && (
+        <FloatingFocusManager context={context} modal={false} initialFocus={-1}>
+          <div
+            className="flex flex-col"
+            ref={refs.setFloating}
+            style={floatingStyles}
+            aria-labelledby={headingId}
+            {...getFloatingProps()}
+          >
+            {children}
+          </div>
+        </FloatingFocusManager>
+      )}
+    </>
   );
 }
 
@@ -101,7 +137,7 @@ export default function Nav() {
   return (
     <div className="fixed bottom-0 left-0 flex z-20 w-full bg-black border-t border-white justify-normal font-teachers">
       {" "}
-      <ul className="flex flex-wrap items-center text-2xl text-white w-full">
+      <ul className="flex flex-wrap items-center text-2xl text-white w-full max-lg:hidden">
         <ItemLeft text="home" url="/" />
         <ItemLeft text="resume" url={undefined}>
           <Subitem text="view online" url="/resume" />
@@ -119,20 +155,16 @@ export default function Nav() {
         </ItemLeft>
         <ItemRight text="about-me" url="/about" first={true} />
         <ItemRight text="contact" url="/contact" />
-        {/* <li className="min-w-48 border-white border-r hover:bg-white hover:text-black">
-          <a
-            href="/resume"
-            className="text-center w-full block p-4 max-sm:hidden"
-          >
-            \RESUME
-          </a>
-          <a
-            href="/documents/resume.pdf"
-            className="text-center w-full block p-4 sm:hidden"
-          >
-            \RESUME
-          </a>
-        </li> */}
+      </ul>
+      <ul className="flex flex-wrap items-center text-2xl text-white w-full lg:hidden">
+        <ItemRight text="nav" url={undefined} first={true}>
+          <Subitem text="home" url="/" />
+          <Subitem text="resume" url="/documents/resume.pdf" />
+          <Subitem text="projects" url="/projects" />
+          <Subitem text="photos" url={undefined}></Subitem>
+          <Subitem text="about-me" url="/about" first={true} />
+          <Subitem text="contact" url="/contact" />
+        </ItemRight>
       </ul>
     </div>
   );
