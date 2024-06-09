@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PhotoAlbum, { ClickHandlerProps, Photo } from "react-photo-album";
+import { Paragraph } from "../paragraph";
 
 const pref = "/images/gallery/";
 const ext = ".jpg";
@@ -35,10 +36,9 @@ export default function Gallery({ photosIn, title, desc }: GalleryProps) {
   }));
   return (
     <>
-      <div className="w-full text-center p-16 font-sans flex flex-col items-center justify-center">
-        <p className="text-8xl">{title}</p>
-        <p className="text-lg mt-4">{desc}</p>
-      </div>
+      <Paragraph title={title} brk={true}>
+        {desc}
+      </Paragraph>
       <PhotoAlbum layout="rows" photos={photos} onClick={populatePopupState} />
       {popupState.shown && (
         <>
