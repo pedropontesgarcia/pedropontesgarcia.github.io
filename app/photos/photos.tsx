@@ -101,7 +101,7 @@ export default function Gallery({
             className="fixed w-screen h-screen top-0 left-0 bg-[rgba(6,6,6,0.9)] z-40"
             onClick={resetPopupState}
           />
-          <div className="fixed w-screen h-screen top-0 left-0 pointer-events-none flex lg:items-start items-center justify-center z-50">
+          <div className="fixed w-screen h-dvh top-0 left-0 pointer-events-none flex lg:items-start items-center justify-center z-50">
             <img
               src={popupState.src}
               className="relative pointer-events-auto z-50 max-h-[80%] max-w-[90%] mt-[5%] cursor-zoom-in before:absolute before:top-0 before:left-0 before:bg-white before:p-2 before:size-32"
