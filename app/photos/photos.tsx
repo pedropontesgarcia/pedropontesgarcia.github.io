@@ -5,7 +5,8 @@ import PhotoAlbum, { ClickHandlerProps, Photo } from "react-photo-album";
 import { Paragraph } from "../paragraph";
 
 const pref = "/images/gallery/";
-const ext = ".webp";
+const ext = "thumb.webp";
+const extHiRes = ".jpg";
 
 interface ImageSize {
   width: number;
@@ -52,7 +53,7 @@ export default function Gallery({
     setStarted(true);
     Array.from(new Array(nTo - nFrom + 1), (_, i) => i + nFrom)
       .map((i) => {
-        let url = "/images/gallery/" + i + ".webp";
+        let url = pref + i + ext;
         return { n: i, dimp: getImageSize(url) };
       })
       .forEach(({ n, dimp }) =>
@@ -74,8 +75,14 @@ export default function Gallery({
   });
   const resetPopupState = () =>
     setPopupState({ shown: false, src: "", zoom: false });
-  const populatePopupState = (h: ClickHandlerProps<Photo>) =>
-    setPopupState({ shown: true, src: h.photo.src, zoom: false });
+  const populatePopupState = (h: ClickHandlerProps<Photo>) => {
+    console.log(h.photo.src.replace(ext, extHiRes));
+    setPopupState({
+      shown: true,
+      src: h.photo.src.replace(ext, extHiRes),
+      zoom: false,
+    });
+  };
   const photos = photosIn.map(({ n, w, h, t }) => ({
     src: pref + n.toString() + ext,
     width: w,
