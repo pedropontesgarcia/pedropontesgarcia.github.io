@@ -39,6 +39,10 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0"
         ></meta>
+        <meta
+          name="description"
+          content="Hi! I'm a student and software developer based in Ithaca, NY. I love photography and the outdoors, as well as philosophy and queer theory. Welcome to my personal website!"
+        ></meta>
       </head>
       <body className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
         {children}
