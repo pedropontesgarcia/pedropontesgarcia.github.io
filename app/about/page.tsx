@@ -65,9 +65,9 @@ export default function Home() {
             <Link href="https://cornell.edu" newpage>
               Cornell University
             </Link>{" "}
-            under the Davis UWC Scholarship Program, and I've had the pleasure
-            to expand my academic and personal perspectives at the College of
-            Arts and Sciences during the past two years.
+            under the Davis UWC Scholarship Program, and I&apos;ve had the
+            pleasure to expand my academic and personal perspectives at the
+            College of Arts and Sciences during the past two years.
           </p>
           <p className="mb-5">
             Cornell has a charmingly graceful campus, spanning hills, gorges,
