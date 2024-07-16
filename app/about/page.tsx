@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Paragraph } from "../paragraph";
-import { randInt } from "../page";
+import { randInt } from "../randInt";
 
 function Link({ children, href, newpage }: any) {
   return (

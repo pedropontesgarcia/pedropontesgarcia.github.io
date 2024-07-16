@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { randInt } from "./randInt";
 
 const name = "pedro\npontes\ngarcía_";
 var delay = 100;
@@ -8,10 +9,6 @@ var done = false;
 var blinking = false;
 var locked = false;
 var photoDelay = 3000;
-
-export function randInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
 function Descriptor({ text, msg, cursorPosition }: any) {
   const [visible, setVisible] = useState(false);
