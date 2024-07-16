@@ -9,7 +9,7 @@ var blinking = false;
 var locked = false;
 var photoDelay = 3000;
 
-function randInt(min: number, max: number) {
+export function randInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -183,7 +183,7 @@ function Top() {
     }, delay);
   }, [index]);
 
-  const [photo, setPhoto] = useState(randInt(1, 98));
+  const [photo, setPhoto] = useState(randInt(1, 97));
   useEffect(() => {
     if (blinking && !locked) {
       locked = true;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   useFloating,
   autoUpdate,
@@ -13,6 +13,7 @@ import {
   FloatingFocusManager,
   useId,
 } from "@floating-ui/react";
+import { useTimer } from "react-timer-hook";
 
 function Item({ text, url }: any) {
   var cls = "text-center w-full block p-4";
@@ -40,6 +41,27 @@ function Subitem({ text, url, download = false, last = false }: any) {
         {text}
       </a>
     );
+}
+
+function SubitemPane({ text }: any) {
+  var cls =
+    "bg-black cursor-pointer text-white p-4 border-t border-l border-r border-white hover:bg-white hover:text-black min-w-48 text-center block";
+  const { restart, totalSeconds } = useTimer({
+    expiryTimestamp: new Date(),
+  });
+  return (
+    <a
+      className={cls}
+      onClick={() => {
+        restart(
+          ((t: Date) => (t.setSeconds(t.getSeconds() + 1), t))(new Date())
+        );
+        navigator.clipboard.writeText(text);
+      }}
+    >
+      {totalSeconds > 0 ? "copied!" : "copy email"}
+    </a>
+  );
 }
 
 function ItemLeft({ text, url, children }: any) {
@@ -254,7 +276,9 @@ export default function Nav() {
           <Subitem text="misc" url="/photos/misc" />
         </ItemLeft>
         <ItemRight text="about-me" url="/about" first={true} />
-        <ItemRight text="contact" url="/contact" />
+        <ItemRight text="contact">
+          <SubitemPane text="pp457@cornell.edu" />
+        </ItemRight>
       </ul>
       <ul className="flex flex-wrap items-center text-2xl text-white w-full lg:hidden">
         <ClickItemRight text="nav" url={undefined} first={true}>
@@ -266,8 +290,8 @@ export default function Nav() {
             <Subitem text="ny" url="/photos/ny" />
             <Subitem text="misc" url="/photos/misc" last={true} />
           </ClickSubitemOpensLeft>
-          <Subitem text="about-me" url="/about" first={true} />
-          <Subitem text="contact" url="/contact" />
+          <Subitem text="about me" url="/about" first={true} />
+          <SubitemPane text="pp457@cornell.edu" />
         </ClickItemRight>
       </ul>
     </div>

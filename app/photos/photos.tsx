@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { GoX, GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import PhotoAlbum, { ClickHandlerProps, Photo } from "react-photo-album";
 import { Paragraph } from "../paragraph";
 
@@ -67,6 +68,7 @@ export default function Gallery({
         })
       );
   }
+  const divRef = useRef<HTMLDivElement>(null);
 
   const [popupState, setPopupState] = useState({
     shown: false,
@@ -76,12 +78,33 @@ export default function Gallery({
   const resetPopupState = () =>
     setPopupState({ shown: false, src: "", zoom: false });
   const populatePopupState = (h: ClickHandlerProps<Photo>) => {
-    console.log(h.photo.src.replace(ext, extHiRes));
     setPopupState({
       shown: true,
       src: h.photo.src.replace(ext, extHiRes),
       zoom: false,
     });
+  };
+  const movePopupPtr = (inc: number) => {
+    var n =
+      parseInt(popupState.src.replace(pref, "").replace(extHiRes, "")) + inc;
+    if (n > nTo || n < nFrom) return;
+    setPopupState({
+      ...popupState,
+      src: pref + n.toString() + extHiRes,
+    });
+  };
+  const processKey = (e: KeyboardEvent<HTMLDivElement>) => {
+    switch (e.key) {
+      case "ArrowLeft":
+        movePopupPtr(-1);
+        break;
+      case "ArrowRight":
+        movePopupPtr(1);
+        break;
+      case "Escape":
+        resetPopupState();
+        break;
+    }
   };
   const photos = photosIn.map(({ n, w, h, t }) => ({
     src: pref + n.toString() + ext,
@@ -101,12 +124,40 @@ export default function Gallery({
             className="fixed w-screen h-screen top-0 left-0 bg-[rgba(6,6,6,0.9)] z-40"
             onClick={resetPopupState}
           />
-          <div className="fixed w-screen h-dvh top-0 left-0 pointer-events-none flex lg:items-start items-center justify-center z-50">
+          <div
+            className="fixed w-screen h-dvh top-0 left-0 pointer-events-none flex lg:items-start items-center justify-center z-50 select-none outline-none"
+            ref={divRef}
+            onLoad={() => {
+              if (divRef.current) divRef.current.focus();
+            }}
+            onKeyDown={processKey}
+            tabIndex={0}
+          >
+            <GoChevronLeft
+              className="self-center m-4 text-4xl pointer-events-auto cursor-pointer max-lg:hidden"
+              onClick={() => {
+                movePopupPtr(-1);
+              }}
+            />
             <img
               src={popupState.src}
               className="relative pointer-events-auto z-50 max-h-[80%] max-w-[90%] mt-[5%] cursor-zoom-in before:absolute before:top-0 before:left-0 before:bg-white before:p-2 before:size-32"
-              onClick={(e) => (popupState.zoom = true)}
+              onClick={(e) => window.open(popupState.src)}
             ></img>
+            <GoChevronRight
+              className="self-center m-4 text-4xl pointer-events-auto cursor-pointer max-lg:hidden"
+              onClick={() => {
+                movePopupPtr(1);
+              }}
+            />
+          </div>
+          <div className="fixed w-screen h-dvh top-0 right-0 pointer-events-none z-50 text-2xl flex justify-end">
+            <div
+              className="m-4 cursor-pointer pointer-events-auto"
+              onClick={resetPopupState}
+            >
+              <GoX />
+            </div>
           </div>
         </>
       )}
